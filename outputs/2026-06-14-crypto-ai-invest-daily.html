@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>加密法案与AI投资日报 - 2026-06-14</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --ink: #16202a;
+      --muted: #5f6b76;
+      --line: #d9e0e6;
+      --blue: #0b5fff;
+      --blue-soft: #eaf1ff;
+      --green: #0a7a43;
+      --green-soft: #e9f8f0;
+      --amber: #9a5b00;
+      --amber-soft: #fff4df;
+      --red: #b42318;
+      --red-soft: #fdeceb;
+      --shadow: 0 10px 28px rgba(16, 24, 40, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: linear-gradient(180deg, #eef3fb 0%, var(--bg) 220px);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+    .wrap {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      padding: 28px 0 56px;
+    }
+    .hero {
+      background: radial-gradient(circle at top right, rgba(11,95,255,0.18), transparent 30%),
+                  linear-gradient(135deg, #0f1728 0%, #152744 55%, #1b3764 100%);
+      color: #f7fbff;
+      border-radius: 24px;
+      padding: 28px 28px 24px;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.12);
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+    h1 {
+      margin: 14px 0 8px;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.15;
+    }
+    .sub {
+      margin: 0;
+      max-width: 860px;
+      color: rgba(247, 251, 255, 0.84);
+      font-size: 15px;
+    }
+    .hero-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .hero-card h3 {
+      margin: 0 0 8px;
+      font-size: 14px;
+      color: #a8d0ff;
+    }
+    .hero-card p {
+      margin: 0;
+      font-size: 14px;
+    }
+    .main {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1.35fr 0.9fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .stack {
+      display: grid;
+      gap: 18px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+    .panel .desc {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px;
+      background: #fbfcfe;
+    }
+    .card + .card { margin-top: 14px; }
+    .card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .pill {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 5px 9px;
+      border-radius: 999px;
+      background: #eef2f6;
+      color: #314152;
+    }
+    .pos { background: var(--green-soft); color: var(--green); }
+    .neu { background: var(--amber-soft); color: var(--amber); }
+    .neg { background: var(--red-soft); color: var(--red); }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .factbox {
+      padding: 12px 13px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+    }
+    .factbox h4 {
+      margin: 0 0 6px;
+      font-size: 13px;
+      color: #35506e;
+    }
+    .factbox p {
+      margin: 0;
+      font-size: 14px;
+    }
+    ul.clean {
+      margin: 10px 0 0 18px;
+      padding: 0;
+    }
+    ul.clean li { margin: 6px 0; }
+    .source-list {
+      margin-top: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .source-list a {
+      color: var(--blue);
+      text-decoration: none;
+    }
+    .source-list a:hover { text-decoration: underline; }
+    .watch {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .watch li { margin: 8px 0; }
+    .footnote {
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    @media (max-width: 960px) {
+      .hero-grid, .main, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .wrap { width: min(100vw - 20px, 1180px); }
+      .hero, .panel { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <span class="eyebrow">投资型 HTML 日报 | 截至 2026-06-14</span>
+      <h1>加密法案与 AI 投资日报</h1>
+      <p class="sub">
+        今天重点不是“爆点很多”，而是几条主线继续被确认：美国稳定币立法进入实施期后，市场结构法案仍在等参议院更高层级推进；Circle 继续把稳定币扩成支付与 Agent 基础设施；AI 硬件定价权继续向整机架、网络、HBM 与供电扩散。
+      </p>
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h3>法案主线</h3>
+          <p>截至 6 月 14 日，CLARITY 方向没变，但今天仍无正式“过院”新节点。风险在时间，不在方向。</p>
+        </div>
+        <div class="hero-card">
+          <h3>支付主线</h3>
+          <p>Circle 从 USDC 发行商继续升级成支付编排层与 Agent 金融基础设施层，赛道开始拼网络与合规分发。</p>
+        </div>
+        <div class="hero-card">
+          <h3>AI 主线</h3>
+          <p>硬件仍看 NVIDIA 平台化、Intel 系统级反攻、Samsung HBM 供给；算法侧更值得盯“可规模化”而不是单次演示。</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="main">
+      <div class="stack">
+        <section class="panel">
+          <div class="section-tag">加密 / 美国法案</div>
+          <h2>CLARITY 没有新表决节点，但市场结构立法继续处在“等参议院节奏”阶段</h2>
+          <p class="desc">今天最重要事实：没有新增正式过会或签署事件，不应把旧信息包装成今日突破。</p>
+
+          <article class="card">
+            <h3>CLARITY Act 方向明确，短线变量仍是参议院 floor 安排</h3>
+            <div class="meta">
+              <span class="pill pos">投资结论：中期偏多</span>
+              <span class="pill neu">短线：时间窗口博弈</span>
+              <span class="pill">截至：2026-06-14</span>
+            </div>
+            <p>
+              <strong>事实：</strong>参议院银行委员会已于 <strong>2026-05-14</strong> 通过
+              <code>Digital Asset Market Clarity Act</code>。截至今天，没有查到新的正式“参议院全院通过”或签署成法节点。
+              外部政策跟踪显示，市场现在盯的是进入更高层级议程的节奏，而不是法案方向本身逆转。
+            </p>
+            <div class="grid-2">
+              <div class="factbox">
+                <h4>事实</h4>
+                <p>委员会已通过，制度框架不是空谈阶段。</p>
+              </div>
+              <div class="factbox">
+                <h4>推断</h4>
+                <p>若参议院排期继续后移，估值重估会延后，不等于逻辑失效。</p>
+              </div>
+              <div class="factbox">
+                <h4>市场意义</h4>
+                <p>对交易所、托管、稳定币支付、RWA 合规基础设施中期利多。</p>
+              </div>
+              <div class="factbox">
+                <h4>相关赛道</h4>
+                <p>Coinbase、Circle、链上券商、合规做市、Tokenization 服务商。</p>
+              </div>
+            </div>
+            <div class="source-list">
+              来源：
+              <a href="https://www.crapo.senate.gov/media/newsreleases/senate-banking-committee-approves-bipartisan-digital-asset-legislation-with-crapo-support">参议院银行委员会相关公告 2026-05-14</a> |
+              <a href="https://bpi.com/bpinsights-june-13-2026/">Bank Policy Institute 2026-06-13</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>GENIUS Act 已是实施底座，稳定币支付竞争转入执行层</h3>
+            <div class="meta">
+              <span class="pill pos">投资结论：结构性利多</span>
+              <span class="pill">已签署：2025-07-18</span>
+            </div>
+            <p>
+              <strong>事实：</strong><code>GENIUS Act</code> 已于 <strong>2025-07-18</strong> 签署成法。
+              这条线今天没有新爆点，但它仍是整个稳定币支付赛道能否规模化的核心前提。监管底座既然已经有了，价值捕获开始向发行、分发、商户接入、清结算和合规编排层迁移。
+            </p>
+            <ul class="clean">
+              <li>利好受监管稳定币发行方与支付基础设施，不利于纯灰色套利模式。</li>
+              <li>不允许稳定币直接付息，意味着价值更可能落在支付网络和资金管理层。</li>
+              <li>继续盯实施细则与州级协同，否则 adoption 节奏仍可能分化。</li>
+            </ul>
+            <div class="source-list">
+              来源：
+              <a href="https://www.whitehouse.gov/briefings-statements/2025/07/the-president-signed-into-law-s-1582/">白宫签署公告</a> |
+              <a href="https://www.whitehouse.gov/fact-sheets/2025/07/fact-sheet-president-donald-j-trump-signs-genius-act-into-law/">白宫事实清单</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-tag">稳定币支付 / AI 支付 / Circle</div>
+          <h2>Circle 仍是这条线最值得盯的执行型公司</h2>
+
+          <article class="card">
+            <h3>Circle 的最新清晰动作：支付网络继续扩，Agent 金融基础设施继续补</h3>
+            <div class="meta">
+              <span class="pill pos">投资结论：执行增强</span>
+              <span class="pill">关键日期：2026-04-08 / 2026-05-13 / 2026-05-27</span>
+            </div>
+            <p>
+              <strong>事实：</strong>Circle 在 <strong>2026-04-08</strong> 推出
+              <code>CPN Managed Payments</code>，把稳定币结算包装成 PSP、银行、平台可直接接入的全栈方案；
+              在 <strong>2026-05-13</strong> 推出 <code>Circle Agent Stack</code>；
+              在 <strong>2026-05-27</strong> 与 Nium 打通跨境 payout 网络，覆盖 190+ 国家与 100+ 币种。
+            </p>
+            <div class="grid-2">
+              <div class="factbox">
+                <h4>事实</h4>
+                <p>Circle 已从“发行 USDC”外溢到“支付编排层 + Agent 支付底座”。</p>
+              </div>
+              <div class="factbox">
+                <h4>推断</h4>
+                <p>若后续披露更多商户、PSP、跨境客户量，估值会更偏支付基础设施而非单一发行商。</p>
+              </div>
+              <div class="factbox">
+                <h4>市场意义</h4>
+                <p>稳定币支付赛道开始比拼合规、网络分发、末端出金，而不只是链上 API。</p>
+              </div>
+              <div class="factbox">
+                <h4>相关标的/赛道</h4>
+                <p>Circle、跨境支付平台、商户收单、链上钱包、B2B 结算中台。</p>
+              </div>
+            </div>
+            <div class="source-list">
+              来源：
+              <a href="https://www.circle.com/pressroom/circle-launches-cpn-managed-payments-a-full-stack-platform-for-seamless-stablecoin-settlement">Circle CPN Managed Payments</a> |
+              <a href="https://investor.circle.com/news/news-details/2026/Circle-Launches-AI-Infrastructure-to-Power-the-Agentic-Economy/default.aspx">Circle Agent Stack</a> |
+              <a href="https://www.circle.com/pressroom/nium-and-circle-to-connect-usdc-settlement-with-global-payouts">Circle × Nium</a> |
+              <a href="https://investor.circle.com/files/doc_financials/2026/q1/FINAL_9_42-p-m-Q1-2026-EPR_May-2026-docx-2.pdf">Circle Q1 2026 报告</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>AI 支付今天无单日爆点，但“可做产品”已被证明，不再只是概念</h3>
+            <div class="meta">
+              <span class="pill neu">投资结论：早期高弹性</span>
+              <span class="pill">状态：无重大新增</span>
+            </div>
+            <p>
+              <strong>事实：</strong>Circle 官网与产品文档已经把
+              <code>Agent Wallets</code>、
+              <code>Agent Marketplace</code>、
+              <code>Nanopayments</code> 放到统一的 Agent Stack 叙事里。今天没有新的大客户落地公告，但这条线已经进入可产品化、可试点状态。
+            </p>
+            <ul class="clean">
+              <li>更可能先跑通的场景仍是 API 收费、代理调用、跨境 B2B 结算。</li>
+              <li>真正的验证指标不是发布会，而是交易量、手续费模型、复购率与合规路径。</li>
+              <li>若美国支付监管继续明朗，稳定币支付会比纯原生加密支付更快拿到机构 adoption。</li>
+            </ul>
+            <div class="source-list">
+              来源：
+              <a href="https://www.circle.com/agent-stack">Circle Agent Stack 页面</a> |
+              <a href="https://www.circle.com/blog/turn-your-api-into-a-storefront-for-agents">Circle x402 / USDC Nanopayments</a> |
+              <a href="https://www.federalreserve.gov/econres/notes/feds-notes/payment-stablecoins-and-cross-border-payments-benefits-and-implications-for-monetary-policy-20260330.html">美联储 2026-03-30 研究注记</a>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-tag">AI 硬件</div>
+          <h2>GPU 仍是中心，但资本开支逻辑已经扩成“芯片到机架”</h2>
+
+          <article class="card">
+            <h3>NVIDIA 平台化继续占主线，真正变量在出口与区域供给</h3>
+            <div class="meta">
+              <span class="pill pos">投资结论：供需与地缘双变量</span>
+              <span class="pill">关键日期：2026-01-05 / 2026-03-18</span>
+            </div>
+            <p>
+              <strong>事实：</strong>NVIDIA 在 <strong>2026-01-05</strong> 推出 Rubin 平台，
+              后续在 <strong>2026-03-18</strong> 继续把 Vera Rubin 扩到更完整的 rack-scale 体系。今天没有新的官方发布，但主线依旧清楚：
+              赢家不是单芯片，而是能把 GPU、CPU、互联、存储、网络、电力和软件一体化交付的公司。
+            </p>
+            <div class="source-list">
+              来源：
+              <a href="https://nvidianews.nvidia.com/news/rubin-platform-ai-supercomputer">NVIDIA Rubin 2026-01-05</a> |
+              <a href="https://nvidianews.nvidia.com/news/nvidia-vera-rubin-platform">NVIDIA Vera Rubin 2026-03-18</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Intel 与 Samsung 继续证明：AI 硬件机会已外溢到网络、CPU、HBM、封装</h3>
+            <div class="meta">
+              <span class="pill neu">投资结论：扩散而非替代</span>
+              <span class="pill">状态：无重大新增</span>
+            </div>
+            <p>
+              <strong>事实：</strong>Intel 在 <strong>2026-06-01</strong> 和 <strong>2026-06-02</strong> 连续强调
+              Xeon 6+、网络和系统级交付；Samsung 在 <strong>2026-02-12</strong> 出货商用 HBM4，
+              在 <strong>2026-03-17</strong> 展示 HBM4E，并在 <strong>2026-05-28</strong> 开始样品出货。
+            </p>
+            <div class="grid-2">
+              <div class="factbox">
+                <h4>事实</h4>
+                <p>HBM、网卡、交换、机架与供电，已经不是配角。</p>
+              </div>
+              <div class="factbox">
+                <h4>市场意义</h4>
+                <p>AI 资本开支会继续从 GPU 龙头向“系统 BOM”扩散。</p>
+              </div>
+            </div>
+            <div class="source-list">
+              来源：
+              <a href="https://newsroom.intel.com/data-center/intel-puts-agentic-ai-xeon-6-networking-ai-systems">Intel 2026-06-01</a> |
+              <a href="https://newsroom.intel.com/artificial-intelligence/intel-announces-new-ai-innovations-at-computex">Intel 2026-06-02</a> |
+              <a href="https://news.samsung.com/global/samsung-ships-industry-first-commercial-hbm4-with-ultimate-performance-for-ai-computing">Samsung HBM4 2026-02-12</a> |
+              <a href="https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026">Samsung HBM4E 2026-03-17</a> |
+              <a href="https://news.samsung.com/global/samsung-electronics-begins-shipment-of-industry-first-hbm4e-samples">Samsung HBM4E samples 2026-05-28</a>
+            </div>
+          </article>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="panel">
+          <div class="section-tag">AI 重大突破 / 具身智能</div>
+          <h2>今天更值得记录的是“哪些突破开始触碰真实约束”</h2>
+          <article class="card">
+            <h3>算法侧：AlphaEvolve 类工具开始从论文走向基础设施效率改进</h3>
+            <div class="meta">
+              <span class="pill pos">投资结论：长期利多工具链</span>
+              <span class="pill">关键日期：2026-05-14 / 2026-05-16</span>
+            </div>
+            <p>
+              <strong>事实：</strong>Google DeepMind 在 5 月披露 AlphaEvolve 一年后的效果，明确写到它已用于优化 Google 数据中心、芯片设计和 AI 训练流程。
+              这类进展的意义不在“又一个模型”，而在 AI 开始反过来改造算力与算法生产效率。
+            </p>
+            <ul class="clean">
+              <li>这更像提升研发效率和基础设施 ROI 的工具层突破。</li>
+              <li>如果未来被更多云厂商、EDA、科研工具链吸收，估值会传导到平台与 infra 软件层。</li>
+            </ul>
+            <div class="source-list">
+              来源：
+              <a href="https://deepmind.google/blog/alphaevolve-impact/">Google DeepMind AlphaEvolve 影响更新</a> |
+              <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/alphaevolve-updates/">Google Blog AlphaEvolve 更新</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>具身智能：今天无“解决核心瓶颈”的决定性官方新节点</h3>
+            <div class="meta">
+              <span class="pill neu">投资结论：继续筛选</span>
+              <span class="pill">状态：无重大新增</span>
+            </div>
+            <p>
+              <strong>事实：</strong>截至今天，我没有查到能证明“具身智能已解决泛化、控制、成本、安全等核心痛点”的官方新发布。
+              这意味着行业仍处在 demo、竞赛、局部场景验证阶段，而不是全面规模化落地阶段。
+            </p>
+            <ul class="clean">
+              <li>真正值得等的信号：单一场景 ROI 跑通、部署数量披露、单位成本明显下降、人工接管率下降。</li>
+              <li>没有这些信号前，机器人赛道更适合事件驱动和精选个股，不适合把“展示效果”直接等同于产业成熟。</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-tag">资本市场映射</div>
+          <h2>今日映射</h2>
+          <article class="card">
+            <h3>受益方向</h3>
+            <ul class="watch">
+              <li><strong>Circle 与稳定币支付基础设施：</strong>监管底座在，网络扩张继续，支付估值逻辑增强。</li>
+              <li><strong>交易所与合规中介：</strong>CLARITY 若继续推进，市场结构不确定性下降。</li>
+              <li><strong>GPU + HBM + 网络 + 机架链条：</strong>AI 资本开支仍在，但会越来越系统化。</li>
+              <li><strong>Agent 工具链：</strong>若 AI 支付和 Agent 商业化继续产品化，工具层先受益。</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>承压方向</h3>
+            <ul class="watch">
+              <li><strong>只靠概念的 AI 支付项目：</strong>如果没有真实结算和商户接入，易被基础设施玩家边缘化。</li>
+              <li><strong>纯 GPU 单点叙事：</strong>若忽视网络、电力、散热、HBM，估值理解会过窄。</li>
+              <li><strong>立法节奏交易：</strong>若把参议院时间差误判成方向变化，短线仓位容易被震出去。</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="section-tag">跟踪清单</div>
+          <h2>未来几周最该盯</h2>
+          <ol class="watch">
+            <li>CLARITY Act 是否出现明确 floor vote 或更强议程信号。</li>
+            <li>GENIUS Act 实施细则是否给稳定币发行与支付网络更清晰边界。</li>
+            <li>Circle 是否披露更多 CPN、Managed Payments、Agent Stack 客户和量化指标。</li>
+            <li>Circle 与更多全球 payout、商户 acquiring、ERP/财资系统合作是否落地。</li>
+            <li>NVIDIA 平台化交付是否出现新的区域供货与出口限制变化。</li>
+            <li>HBM4 / HBM4E 供给、样品反馈、量产节奏是否继续改善。</li>
+            <li>AI agent payment 是否出现真实付费规模，而不是测试网或 demo。</li>
+            <li>具身智能是否出现明确“单场景规模部署 + 成本可接受”的证据。</li>
+          </ol>
+          <p class="footnote">
+            说明：本页严格区分“事实 / 推断 / 市场意义”。今天若无新节点，就明确写“无重大新增”，避免把旧新闻伪装成今日突破。
+          </p>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

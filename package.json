@@ -1,0 +1,9 @@
+{
+  "name": "daily",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/generate-site.mjs"
+  }
+}
