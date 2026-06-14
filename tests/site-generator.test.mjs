@@ -36,6 +36,11 @@ test("buildSite creates index, manifest, and copied daily pages ordered newest f
   assert.match(indexHtml, /2026-06-14/);
   assert.match(indexHtml, /2026-06-13/);
   assert.match(indexHtml, /Daily/);
+  assert.match(indexHtml, /class="shell"/);
+  assert.match(indexHtml, /class="sidebar"/);
+  assert.match(indexHtml, /当前热点/);
+  assert.match(indexHtml, /class="timeline"/);
+  assert.match(indexHtml, /投资理由/);
 
   await stat(path.join(siteDir, "daily", "2026-06-13.html"));
   await stat(path.join(siteDir, "daily", "2026-06-14.html"));
