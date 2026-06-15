@@ -41,7 +41,14 @@ test("buildSite creates index, manifest, and copied daily pages ordered newest f
   assert.match(indexHtml, /当前热点/);
   assert.match(indexHtml, /class="timeline"/);
   assert.match(indexHtml, /投资理由/);
+  assert.match(indexHtml, /加密突破/);
+  assert.match(indexHtml, /AI 基建/);
 
   await stat(path.join(siteDir, "daily", "2026-06-13.html"));
   await stat(path.join(siteDir, "daily", "2026-06-14.html"));
+
+  const dailyHtml = await readFile(path.join(siteDir, "daily", "2026-06-14.html"), "utf8");
+  assert.match(dailyHtml, /class="daily-nav"/);
+  assert.match(dailyHtml, /返回列表/);
+  assert.match(dailyHtml, /href="\.\.\/"/);
 });

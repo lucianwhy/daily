@@ -1,4 +1,4 @@
-import { copyFile, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 const DAILY_FILE_PATTERN = /^(\d{4}-\d{2}-\d{2})-crypto-ai-invest-daily\.html$/;
@@ -26,6 +26,61 @@ function stripHtml(value) {
 function buildExcerpt(entry) {
   const text = stripHtml(entry.summary || entry.headline || entry.title);
   return text.length > 120 ? `${text.slice(0, 120)}...` : text;
+}
+
+function enhanceDailyHtml(html, entry, latestEntry) {
+  if (html.includes('class="daily-nav"')) {
+    return html;
+  }
+
+  const navCss = `
+  <style>
+    .daily-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 18px;
+      background: rgba(7, 12, 24, 0.92);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+      color: #e8edf7;
+      backdrop-filter: blur(14px);
+      font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    .daily-nav a {
+      color: #22d3ee;
+      text-decoration: none;
+      font-weight: 800;
+    }
+    .daily-nav span {
+      color: #94a3b8;
+      font-size: 13px;
+    }
+    @media (max-width: 720px) {
+      .daily-nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+  </style>`;
+
+  const navHtml = `
+  <nav class="daily-nav" aria-label="日报导航">
+    <a href="../">返回列表</a>
+    <span>${escapeHtml(entry.date)} · ${escapeHtml(entry.title)}</span>
+    <a href="./${latestEntry.date}.html">最新日报</a>
+  </nav>`;
+
+  const withCss = html.includes("</head>")
+    ? html.replace("</head>", `${navCss}\n</head>`)
+    : `${navCss}\n${html}`;
+
+  return withCss.includes("<body>")
+    ? withCss.replace("<body>", `<body>\n${navHtml}`)
+    : `${navHtml}\n${withCss}`;
 }
 
 async function readEntry(outputsDir, filename) {
@@ -88,8 +143,9 @@ function buildIndexHtml(entries) {
             <p class="feed-summary">${escapeHtml(buildExcerpt(entry) || "打开查看当日完整投资日报。")}</p>
             <div class="tags">
               <span>加密法案</span>
+              <span>加密突破</span>
               <span>稳定币支付</span>
-              <span>AI 硬件</span>
+              <span>AI 基建</span>
               <span>Circle</span>
             </div>
             <div class="reason">
@@ -528,7 +584,7 @@ function buildIndexHtml(entries) {
         <a href="./data/dailies.json"><span class="nav-mark"></span>全部动态</a>
         <a href="${latest.href}"><span class="nav-mark"></span>AI 日报</a>
         <a href="${latest.href}#circle"><span class="nav-mark"></span>Circle</a>
-        <a href="${latest.href}#hardware"><span class="nav-mark"></span>AI 硬件</a>
+        <a href="${latest.href}#hardware"><span class="nav-mark"></span>AI 基建</a>
         <a href="${latest.href}#watchlist"><span class="nav-mark"></span>跟踪清单</a>
       </nav>
       <div class="sidebar-foot">
@@ -540,7 +596,7 @@ function buildIndexHtml(entries) {
     <main class="content">
       <section class="hero">
         <h1>精选</h1>
-        <p class="hero-sub">AI 自动挑选的高价值投资内容。覆盖加密法案、稳定币支付、Circle、AI 硬件与重大突破。</p>
+        <p class="hero-sub">AI 自动挑选的高价值投资内容。覆盖加密法案、加密重大突破、稳定币支付、Circle、AI 基建与重大突破。</p>
         <div class="hero-line"></div>
         <div class="toolbar">
           <div class="tabs" role="tablist" aria-label="内容分类">
@@ -548,7 +604,7 @@ function buildIndexHtml(entries) {
             <button class="tab" type="button" data-filter="法案">法案</button>
             <button class="tab" type="button" data-filter="支付">支付</button>
             <button class="tab" type="button" data-filter="Circle">Circle</button>
-            <button class="tab" type="button" data-filter="硬件">硬件</button>
+            <button class="tab" type="button" data-filter="基建">基建</button>
             <button class="tab" type="button" data-filter="突破">突破</button>
           </div>
           <form class="search" id="searchForm">
@@ -632,7 +688,12 @@ export async function buildSite({ outputsDir, siteDir }) {
   await mkdir(path.join(siteDir, "data"), { recursive: true });
 
   for (const entry of entries) {
-    await copyFile(entry.sourcePath, path.join(siteDir, "daily", `${entry.date}.html`));
+    const html = await readFile(entry.sourcePath, "utf8");
+    await writeFile(
+      path.join(siteDir, "daily", `${entry.date}.html`),
+      enhanceDailyHtml(html, entry, entries[0]),
+      "utf8"
+    );
   }
 
   const manifest = entries.map(({ date, href, title, summary }) => ({
